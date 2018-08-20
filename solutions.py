@@ -53,23 +53,23 @@ with open('index.csv', 'w') as csv_file: #as is an alias, i.e. variable
 # import csv
 # from datetime import datetime
 
-# web_page = ['https://finance.yahoo.com/quote/FB?p=FB', 'https://finance.yahoo.com/quote/AAPL?p=AAPL']
+web_page = ['https://finance.yahoo.com/quote/FB?p=FB', 'https://finance.yahoo.com/quote/AAPL?p=AAPL']
 
 #for loop
-# data = []
-# for page in web_page:
-#     co_pg = urllib2.urlopen(page)
-#     soup = BeautifulSoup(co_pg, 'html.parser')
-#     name_box = soup.find('h1', attrs={'class': 'D(ib)'})
-#     name = name_box.text.strip()
-#     print(name)
-#     price_box = soup.find('span', attrs={'class': 'Fw(b)'})
-#     price = price_box.text
-#     print(price)
-#     data.append(((name, price))
+data = []
+for page in web_page:
+    co_pg = urllib2.urlopen(page)
+    soup = BeautifulSoup(co_pg, 'html.parser')
+    name_box = soup.find('h1', attrs={'class': 'D(ib)'})
+    name = name_box.text.strip()
+    print(name)
+    price_box = soup.find('span', attrs={'class': 'Fw(b)'})
+    price = price_box.text
+    print(price)
+    data.append(((name, price))
 
-# with open('index.csv', 'a') as csv_file:
-#     writer = csv.writer(csv_file)
-#     for name, price in data:
-#       writer.writerow([name, price, datetime.now()])
+with open('index.csv', 'a') as csv_file:
+    writer = csv.writer(csv_file)
+    for name, price in data:
+      writer.writerow([name, price, datetime.now()])
 
